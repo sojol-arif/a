@@ -1,0 +1,11 @@
+
+/* contact page design */
+#ic-contact{
+    p.ic-text-p-light{
+        font-weight: 300;
+        margin-bottom: 28px;
+    }
+    form{
+        @extend %contact-form-section;
+    }
+}

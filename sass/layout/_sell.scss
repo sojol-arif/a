@@ -1,0 +1,132 @@
+#ic-sell-top-left{
+    padding:55px 30px 60px;
+    box-shadow: -4px 0px 14.72px 1.28px rgba(1, 1, 1, 0.1);
+    margin-bottom: 45px;
+    h1{
+        font-weight: bold;
+    }
+    p{
+        margin-bottom:25px;
+        font-weight: 300
+    }
+    form{
+        .form-control{
+            background-color: $box-color;
+            border:none;
+            font-weight: 300;
+        }
+        .input-group-text.locate-btn{
+            background-color: $primary;
+            color: $white;
+            cursor: pointer;
+            @include transition(background-color .2s ease-in-out);
+            font-weight: 600;
+            &:hover{
+                background-color: lighten($primary,40%)
+            }
+        }
+        label{
+            font-size: 16px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        .submit-btn-sell{
+            text-transform: uppercase;
+        }
+        ::-webkit-input-placeholder { /* Edge */
+        color: $primary;
+        }
+        
+        :-ms-input-placeholder { /* Internet Explorer */
+        color: $primary;
+        }
+        
+        ::placeholder {
+        color: $primary;
+        }
+        
+        .submit-btn-sell{
+            font-weight: 300;
+        }
+        select *{
+            font-weight: 300;
+        }
+    }
+}
+
+#ic-sell-top-right{
+    ul{
+        margin:0;
+        padding:0;
+        display: flex;
+        justify-content: space-between;
+        li{
+            list-style-type: none;
+            display: inline-block;
+            a{
+                text-transform: uppercase;
+                display: block;
+                position: relative;
+                text-align: center;
+                padding-top: 8px;
+                padding-bottom: 12px;
+                padding-left: 25px;
+                padding-right: 25px;
+                font-weight: 600;
+                span{
+                    display: block;
+                    height: 1px;
+                    width: 30px;
+                    border-bottom:1px dashed $primary;
+                    position: relative;
+                    left:50%;
+                    transform: translateX(-50%);
+                    padding-top: 10px;
+                }
+            }
+            &.active{
+                a{
+                    background-color: $secondary;
+                    color:$white;
+                    span{
+                        border-color: #fff;
+                    }
+                }
+                &:hover{
+                    a{
+                        color:#fff;
+                    }
+                }
+            }
+            &:hover{
+                a{
+                    color:$primary;
+                }
+            } 
+        }
+    }
+}
+#ic-sell-bottom{
+    background-color:$box-color;
+    h1{
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    p{
+        font-weight: 300;
+        margin-bottom: 28px;
+    }
+    a{
+        font-weight: 600;
+    }
+}
+
+@media only screen and (min-width:1200px){
+    #ic-sell-top-left{
+        margin-bottom: 0;
+    }
+    #ic-sell-top-right ul li a {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

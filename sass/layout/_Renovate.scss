@@ -1,0 +1,173 @@
+/* Renovate page css */
+#ic-renovate-tabs-top{
+    ul.nav.nav-pills{
+        li.nav-item{
+            margin-bottom: 15px;/* 30px */
+            &:not(:last-child){
+                margin-right: 2px;
+            }
+            a.nav-link{
+                color:$secondary;
+                padding:13px 9px;/*18px 16px*/
+                border-radius: 0;
+                text-transform: capitalize;
+                font-weight: 600;
+                @include transition(color .3s ease-in-out, background-color .3s ease-in-out);
+
+                &:hover,
+                &.active{
+                    background-color: $secondary;
+                    color:$white;
+                }
+            }
+        }
+    }
+    .tab-content{
+        @extend %tab-pane-active-animation-some-percent;
+        .carousel{
+            .carousel-inner{
+                @extend %carousel-ul-li-border;
+                .carousel-item{
+                    img{
+    
+                    }
+                    .carousel-caption{
+                        text-align: left;
+                        left:8%;
+                        padding-bottom: 10px;/*20px*/
+                        ul{
+                            li{
+                                a{
+                                   color:$white; 
+                                }
+                            }
+                        }
+                        ul.ic-nameArea{
+                            margin-bottom: 3px;/*10px*/
+                        }
+                    }
+                }
+            }
+            a.carousel-control-prev,
+            a.carousel-control-next{
+                width: 8%;
+                font-size: 20px;
+                opacity: 1;
+                    i{
+                        width: 50px;
+                        height: 50px;
+                        line-height: 50px;
+                        text-align: center;
+                        @include transition(background-color .3s ease);
+                    }
+                &:hover{
+                   i{
+                    background-color: rgba(223,27,36, .7);
+                   }
+                }
+            }
+            a.carousel-control-prev{
+
+                i{
+
+                }
+            }
+            a.carousel-control-next{
+                i{
+
+                }
+            }
+        }
+    }
+    a.ic-tab-top-btn{
+        margin-top:30px;
+    }
+}
+
+#ic-renovate-tabs-bottom{
+    background-color: $box-color;
+    .ic-tab-top-btn{
+        margin-top: 30px;
+    }
+    .nav.nav-pills{
+        background-color: rgb(255, 255, 255);
+        box-shadow: -4px 0px 14.72px 1.28px rgba(1, 1, 1, 0.05);
+        padding:30px;
+        text-align: left;
+        margin-bottom: 30px;
+        height: 435px;
+        h5{
+            font-weight: bold;
+        }
+        a.nav-link{
+            color:$primary;
+            padding-left: 0;
+            border-radius: 0;
+            font-weight: 600;
+            background-color: transparent;
+            @include transition(color .3s ease-in-out, background-color .3s ease-in-out);
+
+            &:hover,
+            &.active{
+                color:$secondary;
+            }
+        }
+    }
+    .tab-content{
+        @extend %tab-animation-fadeInUp;
+        .tab-pane{
+            .ic-single-tab-inner{
+                position: relative;
+                height: 100%;
+                iframe{
+                    display: block;
+                }
+                @extend %carousel-ul-li-border;
+                .carousel-caption{
+                    text-align: left;
+                    left:9%;
+                    ul{
+                        li{
+                            a{
+                                color:$white;
+                                &:hover{
+                                    color:$white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .ic-tab-top-btn{
+                margin-top:30px;
+            }
+        }
+    } 
+}
+
+@media only screen and (min-width: 768px){
+    #ic-renovate-tabs-top{
+        ul.nav.nav-pills{
+            li.nav-item{
+                margin-bottom: 30px;
+                a.nav-link{
+                    padding:18px 16px;
+                }
+            }
+        }
+        .tab-content{
+            .carousel{
+                .carousel-inner{
+                    .carousel-item{
+                        .carousel-caption{
+                            padding-bottom: 20px;
+                            ul.ic-nameArea{
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,831 @@
+
+//banner style home page
+#banner{
+    a.nav-link{
+        color:$white;
+        background-color: $primary;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        @include transition(background-color .3s ease-in-out);
+        &:hover,
+        &.active{
+          color:$white;
+          background-color: $secondary;
+        }
+      }
+    position: relative;
+    img.home-banner{
+        object-fit: cover;
+        height: 300px;
+    }
+    #banner-tabs{
+        position: absolute;
+        top:-webkit-calc(100% - 57%);
+        top:-moz-calc(100% - 57%);
+        top:calc(100% - 57%);
+        left:50%;
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        width: 60%; /* min width 992 width: 54%; */
+        ::-webkit-input-placeholder { /* Edge */
+            opacity: .7;
+            filter: alpha(opacity=70); /* For IE8 and earlier */
+        }
+        :-ms-input-placeholder { /* Internet Explorer */
+            opacity: .7;
+            filter: alpha(opacity=70); /* For IE8 and earlier */
+        }
+        :-moz-input-placeholder { 
+            opacity: .7;
+            filter: alpha(opacity=70); /* For IE8 and earlier */
+        }
+        ::placeholder {
+            opacity: .7;
+            filter: alpha(opacity=70); /* For IE8 and earlier */
+        }
+        ul.nav{
+            li.nav-item{
+                a.nav-link{
+                    padding-top:0;
+                    padding-bottom: 0;
+                    border-radius: 0;   
+                    background-color:rgba(0,0,0, 0.74);
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    margin-bottom: 5px;
+                    @include heading-font-semibold;
+                    &:hover,
+                    &.active{
+                        background-color:rgba(223, 27, 36 , 0.74);
+                    }
+                }
+                &:not(:last-child){
+                    a.nav-link{
+                        margin-right: 5px;  
+                    } 
+                }
+            }
+        }
+        #pills-tabContent{
+            @extend %tab-pane-active-animation;
+           .tab-pane{
+                position: relative;
+                form{
+                    display: block;
+                    .form-control{
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                    input{
+                        width: 100%;
+                        text-overflow: ellipsis; 
+                        padding-left: 17px;
+                        background-color:rgba(0,0,0, 0.74);
+                        color:$white;
+                        border:none;
+                        padding-right: 70px;
+                        white-space: nowrap;
+                    }
+                    button{
+                        position: absolute;
+                        color:$white;
+                        right:25px;
+                        top:8px;
+                        font-size: 20px;
+                        padding:0;
+                    }
+                    ::-webkit-input-placeholder { /* Edge */
+                        color: $white;
+                      }
+                      
+                      :-ms-input-placeholder { /* Internet Explorer */
+                        color: $white;
+                      }
+                      
+                      ::placeholder {
+                        color: $white;
+                      }
+                }
+            }
+
+        }
+    }
+    &::before{
+        position: absolute;
+        left:0;
+        top:0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background-image: linear-gradient(rgba(0,0,0, .55), 40%, transparent);
+    }
+}
+.ic-login-register-nav{
+    display: none;
+}
+
+// featured listing 
+#ic-Featured-listing{
+    h2{
+
+    }
+    .bd-example{
+        .ic-carousel-home{
+            ol.carousel-indicators{
+                justify-content: flex-start;
+                margin-left: 9%;
+                margin-right: 9%;
+                li{
+                    width: 16px;
+                    height: 16px;
+                    background-color: $white;
+                    opacity: 1;
+                    @include transition(.2s ease);
+                    &:hover,
+                    &.active{
+                        background-color: $secondary;
+                    }
+                    &:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .carousel-inner{
+                @extend %carousel-ul-li-border;
+                .carousel-item{
+                    img{
+                        
+                    }
+                    .carousel-caption{
+                        text-align: left !important;
+                        left: 9%;
+                        right: 9%;
+                        bottom:15%;
+                        ul{
+                            li{
+                                a{
+                                    color:$white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//carousel animation only fadeInLeft custom
+@-webkit-keyframes ic-fadeInLeft{0%{-webkit-transform:translate(-25%,0%);opacity:0;transform:translate(-25%,0%)}to{-webkit-transform:translate(0,0%);opacity:1;transform:translate(0,0%)}}
+@keyframes ic-fadeInLeft{0%{-webkit-transform:translate(-25%,0%);opacity:0;transform:translate(-25%,0%)}to{-webkit-transform:translate(0,0%);opacity:1;transform:translate(0,0%)}}
+.ic-fadeInLeft{
+    -webkit-animation-name:ic-fadeInLeft;animation-name:ic-fadeInLeft;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+//carousel animation only fadeInLeft2 custom
+@-webkit-keyframes ic-fadeInLeft{0%{-webkit-transform:translate(-25%,0%);opacity:0;transform:translate(-25%,0%)}to{-webkit-transform:translate(0,0%);opacity:1;transform:translate(0,0%)}}
+@keyframes ic-fadeInLeft2{0%{-webkit-transform:translate(-25%,-50%);opacity:0;transform:translate(-25%,0%)}to{-webkit-transform:translate(0,0%);opacity:1;transform:translate(0,0%)}}
+.ic-fadeInLeft2{
+    -webkit-animation-name:ic-fadeInLeft2;animation-name:ic-fadeInLeft2;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+
+//carousel animation only fadeInRight custom
+@-webkit-keyframes ic-fadeInRight{0%{-webkit-transform:translate(25%,0%);opacity:0;transform:translate(25%,0%)}to{-webkit-transform:translate(0,0%);opacity:1;transform:translate(0,0%)}}
+@keyframes ic-fadeInRight{0%{-webkit-transform:translate(25%,0%);opacity:0;transform:translate(25%,0%)}to{-webkit-transform:translate(0,0%);opacity:1;transform:translate(0,0%)}}
+.ic-fadeInRight{
+    -webkit-animation-name:ic-fadeInRight;animation-name:ic-fadeInRight;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+//carousel animation only fadeInRight2 custom
+@-webkit-keyframes ic-fadeInRight2{0%{-webkit-transform:translate(25%,0%);opacity:0;transform:translate(25%,-0%)}to{-webkit-transform:translate(0,-0%);opacity:1;transform:translate(0,-0%)}}
+@keyframes ic-fadeInRight2{0%{-webkit-transform:translate(25%,-0%);opacity:0;transform:translate(25%,-0%)}to{-webkit-transform:translate(0,-0%);opacity:1;transform:translate(0,-0%)}}
+.ic-fadeInRight2{
+    -webkit-animation-name:ic-fadeInRight2;animation-name:ic-fadeInRight2;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+
+// Listed propertise
+#ic-listed-propertise{
+    background-color: $box-color;
+}
+.ic-absolute-carousel-section{
+    .ic-absolute-carousel{
+        ol{
+            left: 7%;
+            top: 132%;
+            justify-content: flex-start;
+            margin-left: 26px;
+            li{
+                background-color: $primary;
+                width:16px;
+                height: 16px;
+                background-color: $primary;
+                opacity: 1;
+                @include transition(.2s ease);
+                &:hover,
+                &.active{
+                    background-color: $secondary;
+                }
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+        }
+        .carousel-inner{
+            overflow: visible;
+            margin-bottom: 222px;
+            @extend %carousel-ul-li-border;
+            .carousel-item{
+                img{
+
+                }
+                .carousel-caption{
+                    left:7%;
+                    right:7%;
+                    padding: 30px;
+                    bottom: inherit;
+                    text-align: left;
+                    box-shadow: 0px 4px 11.04px 0.96px rgba(1, 1, 1, 0.1);
+                    top:60%;
+                    background-color: $white;
+                    h4{
+                        font-weight: bold;
+                        color:$secondary;
+                        margin-bottom: 14px;
+                    }
+                    p.card-p-text{
+                        color:$primary;
+                        font-size: 14px;
+                    }
+                    a.ic-card-btn{
+                        margin-bottom: 80px;
+                        margin-top:28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media(min-width:576px) {
+   #banner{
+       a.nav-link{
+        height: 50px;
+        line-height: 50px;
+       }
+        #banner-tabs #pills-tabContent .tab-pane form .form-control {
+            height: 50px;
+            line-height: 50px;
+        }
+        #banner-tabs ul.nav li.nav-item a.nav-link{
+            padding-left: 17px;
+            padding-right: 17px;
+        }
+        img.home-banner{
+            height: inherit;
+        }
+   }
+   // Listed propertise
+   .ic-absolute-carousel-section{
+    .ic-absolute-carousel{
+        ol{
+            left: 7%;
+            top: 129%;
+            li{
+                
+            }
+        }
+        .carousel-inner{
+           
+            margin-bottom: 210px;
+            .carousel-item{
+                img{
+
+                }
+                .carousel-caption{
+                    left:7%;
+                    right:7%;
+                   
+                    ul{
+                        li{
+                            
+                            a{
+                            }
+                        }
+                    }
+                    ul.ic-nameArea{
+                        li{
+                            a{
+                                
+                            }
+                            &:not(:last-child){
+                                a{
+                                   
+                                }
+                            }
+                        }
+                    }
+                    ul.ic-how-many{
+                        li{
+                            a{
+                                
+                            }
+                            &:not(:last-child){
+                                a{
+                                    
+                                }
+                            }
+                        }
+                    }
+                    p.card-p-text{
+                    }
+                    a.ic-card-btn{
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+}
+@media(min-width:768px) {
+
+    //featured listing carousel 
+    #ic-Featured-listing{
+        h2{
+    
+        }
+        .bd-example{
+            .ic-carousel-home{
+                ol.carousel-indicators{
+                    li{
+                    }
+                }
+                .carousel-inner{
+                    .carousel-item{
+                        img{
+                            
+                        }
+                        .carousel-caption{
+                            h5{
+                                font-size: 18px;
+                            }
+                            h5:first-child{
+                                font-weight: bold;
+                            }
+                            h5:nth-child(2){
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Listed propertise
+    .ic-absolute-carousel-section{
+        .ic-absolute-carousel{
+            ol{
+                left: 15%;
+                top: 110%;
+                li{
+                }
+            }
+            .carousel-inner{
+                margin-bottom: 139px;
+                .carousel-item{
+                    img{
+
+                    }
+                    .carousel-caption{
+                        left:15%;
+                        right: 15%;
+                        padding: 30px;
+                        h4{
+                            margin-bottom: 14px;
+                        }
+                        ul{
+                            li{
+                                a{
+                                }
+                            }
+                        }
+                        ul.ic-nameArea{
+                            li{
+                                a{
+                                }
+                                &:not(:last-child){
+                                    a{
+                                    }
+                                }
+                            }
+                        }
+                        ul.ic-how-many{
+                            li{
+                                a{
+                                }
+                            }
+                        }
+                        p.card-p-text{
+                            font-size: 14px;
+                        }
+                        a.ic-card-btn{
+                            margin-bottom: 80px;
+                            margin-top:28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(min-width:992px) {
+
+    /* Animation home page*/
+    @-webkit-keyframes ic-fadeInLeft{0%{-webkit-transform:translate(-25%,-50%);opacity:0;transform:translate(-25%,-50%)}to{-webkit-transform:translate(0,-50%);opacity:1;transform:translate(0,-50%)}}
+    @keyframes ic-fadeInLeft{0%{-webkit-transform:translate(-25%,-50%);opacity:0;transform:translate(-25%,-50%)}to{-webkit-transform:translate(0,-50%);opacity:1;transform:translate(0,-50%)}}
+    .ic-fadeInLeft{
+        -webkit-animation-name:ic-fadeInLeft;animation-name:ic-fadeInLeft;
+        -webkit-animation-duration: 1.5s;
+        -o-animation-duration: 1.5s;
+        -moz-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+    }
+    @-webkit-keyframes ic-fadeInRight2{0%{-webkit-transform:translate(25%,-50%);opacity:0;transform:translate(25%,-50%)}to{-webkit-transform:translate(0,-50%);opacity:1;transform:translate(0,-50%)}}
+    @keyframes ic-fadeInRight2{0%{-webkit-transform:translate(25%,-50%);opacity:0;transform:translate(25%,-50%)}to{-webkit-transform:translate(0,-50%);opacity:1;transform:translate(0,-50%)}}
+    .ic-fadeInRight2{
+        -webkit-animation-name:ic-fadeInRight2;animation-name:ic-fadeInRight2;
+        -webkit-animation-duration: 1.5s;
+        -o-animation-duration: 1.5s;
+        -moz-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+    }
+
+  //featured listing carousel 
+  #ic-Featured-listing{
+    h2{
+
+    }
+    .bd-example{
+        .ic-carousel-home{
+            ol.carousel-indicators{
+                margin-bottom: 40px;
+                li{
+                }
+            }
+            .carousel-inner{
+                .carousel-item{
+                    img{
+                        
+                    }
+                    .carousel-caption{
+                        h5:nth-child(2){
+                            margin-bottom: 68px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+ // Listed propertise
+ .ic-absolute-carousel-section{
+    .ic-absolute-carousel{
+        ol{
+            left: 50%;
+            top: 73%;
+            li{
+               
+            }
+        }
+        .carousel-inner{
+           margin-bottom: 0;
+            .carousel-item{
+                img{
+
+                }
+                .carousel-caption{
+                   
+                    left:50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    top:50%;
+                    h4{
+                      
+                    }
+                    ul{
+                       
+                        li{
+                           
+                            a{
+                              
+                            }
+                        }
+                    }
+                    ul.ic-nameArea{
+                        li{
+                            a{
+                            }
+                            &:not(:last-child){
+                                a{
+                                    
+                                }
+                            }
+                        }
+                    }
+                    ul.ic-how-many{
+                       
+                        li{
+                            a{
+                               
+                            }
+                            
+                        }
+                    }
+                    p.card-p-text{
+                       
+                    }
+                    a.ic-card-btn{
+                       
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Renovate-Propertise */
+    #ic-renovate-propertise{
+        .ic-absolute-carousel{
+            ol{
+                left: 0%;
+                top: 73%;
+                li{
+                
+                }
+            }
+            .carousel-inner{
+                .carousel-item{
+                    img{
+
+                    }
+                    .carousel-caption{
+                        left:0%;
+                        right: 50%;
+                        ul{
+                        
+                            li{
+                            
+                                a{
+                                
+                                }
+                            }
+                        }
+                        ul.ic-nameArea{
+                            li{
+                                a{
+                                }
+                                &:not(:last-child){
+                                    a{
+                                        
+                                    }
+                                }
+                            }
+                        }
+                        ul.ic-how-many{
+                        
+                            li{
+                                a{
+                                
+                                }
+                                
+                            }
+                        }
+                        p.card-p-text{
+                        
+                        }
+                        a.ic-card-btn{
+                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(min-width:1200px) {
+    #banner{
+        #banner-tabs{
+            width:54%;
+        }
+    }
+
+     // Listed propertise
+     .ic-absolute-carousel-section{
+        .ic-absolute-carousel{
+            ol{
+                left: 50%;
+                top: 73%;
+                justify-content: flex-start;
+                margin-left: 26px;
+                li{
+                    background-color: $primary;
+                    width:16px;
+                    height: 16px;
+                    background-color: $primary;
+                    opacity: 1;
+                    @include transition(.2s ease);
+                    &:hover,
+                    &.active{
+                        background-color: $secondary;
+                    }
+                    &:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .carousel-inner{
+                overflow: visible;
+                .carousel-item{
+                    img{
+
+                    }
+                    .carousel-caption{
+                        h4{
+                        }
+                        ul{
+                            
+                        }
+                        ul.ic-nameArea{
+                            li{
+                            }
+                        }
+                        ul.ic-how-many{
+                            li{
+                                a{
+                                }
+                                &:not(:last-child){
+                                    a{
+                                    }
+                                }
+                            }
+                        }
+                        p.card-p-text{
+                            color:$primary;
+                            font-size: 16px;
+                        }
+                        a.ic-card-btn{
+                            margin-bottom: 100px;
+                            margin-top:28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+    #banner{
+        margin-top:90px;
+    }
+}
+@media(max-width:600px) {
+    .ic-absolute-carousel-section{
+        
+        .ic-absolute-carousel ol.carousel-indicators{
+            top:100%;
+            left:50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            padding-top: 30px;
+        } .ic-absolute-carousel .carousel-inner{
+            margin-bottom: 75px;
+        }
+    }
+    .ic-absolute-carousel-section .ic-absolute-carousel .carousel-inner .carousel-item .carousel-caption {
+        left: 0%;
+        right: 0%;
+        padding: 30px;
+        bottom: inherit;
+        text-align: left;
+        box-shadow: inherit;
+        top: 100%;
+        background-color: transparent;
+        padding-left:0;
+        padding-right: 0;
+    }
+    .card-p-text{
+        display: none;
+    }
+    .ic-absolute-carousel-section .ic-absolute-carousel ol.carousel-indicators {
+        top: 185%;
+        left: 0%;
+        transform: translateX(-50%);
+        -webkit-transform: inherit;
+    }
+    #carouselExampleCaptions2  img,
+    #carouselExampleCaptions  img,
+    #carouselExampleCaptions3  img
+    {
+        height: 400px;
+    }
+    #carouselExampleCaptions2,
+    #carouselExampleCaptions3{
+       margin-bottom: 291px;
+    }
+    .ic-absolute-carousel-section .ic-absolute-carousel ol.carousel-indicators {
+        top: 155%;
+        left:0;
+        margin:0;
+    }
+    #carouselExampleCaptions3{
+
+    }
+}
+@media(max-width:400px) {
+    header nav.ic-navbar ul li.ic-login,
+    header nav.ic-navbar ul li.ic-register{
+        display: none;
+    }
+    .ic-login-register-nav{
+        display: block;
+        right:10px;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        background: none;
+        border:none;
+        i{
+            font-size:20px;
+        }
+    }
+    header nav.ic-navbar button.navbar-toggler.ic-navbar-toggler1 {
+        right:50px;
+        left: inherit;
+        transform: inherit;
+    }
+    .modal.ic-login-register .modal-dialog {
+        width: 84% !important;
+    }
+    .modal.ic-login-register .modal-dialog .modal-content .modal-header h3.modal-title {
+        margin-left: 0 !important;
+    }
+    #banner img.home-banner {
+        object-fit: cover;
+        height: 360px;
+    }
+    #banner #banner-tabs ul.nav li.nav-item a.nav-link {
+        font-size:12px;
+    }
+    #banner #banner-tabs {
+        width: 94%;
+    }
+    #banner #banner-tabs #pills-tabContent .tab-pane form button {
+        right: 15px;
+        top: 5px;
+        font-size: 16px;
+    }
+    #banner {
+        margin-top: 90px;
+    }
+    #banner #banner-tabs {
+        top:38%;
+    }
+    #carouselExampleCaptions img,
+    #carouselExampleCaptions2  img,
+    #carouselExampleCaptions3  img{
+        height:237px;
+    }
+    #ic-Featured-listing .bd-example .ic-carousel-home .carousel-inner .carousel-item .carousel-caption ul.ic-how-many li a {
+        font-size: 14px;
+    }
+    #carouselExampleCaptions2,
+    #carouselExampleCaptions3 {
+        margin-bottom: 308px;
+    }
+    .ic-absolute-carousel-section .ic-absolute-carousel ol.carousel-indicators {
+        top: 209%;
+        left: 0;
+        margin: 0;
+    }
+}
+

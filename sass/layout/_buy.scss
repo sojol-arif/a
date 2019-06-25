@@ -1,0 +1,343 @@
+
+#ic-buy{
+    h1{
+        margin-bottom: 25px;
+    }
+    #search-box{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        #searchCity,
+        #buy-filter{
+            .theme-select select,
+            .form-control,
+            ul#buy-filter-price,
+            #ic-advanced-search{
+                background-color: $box-color;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 50px;
+                height: 50px;
+                color: $primary;
+                padding:0;
+                border:none;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-transform: capitalize;
+            }
+        }
+        #searchCity{
+            margin-right: 2%;
+            min-width: 280px;
+            width: auto;
+            input.form-control{
+                font-weight: 300;
+            }
+        }
+        #buy-filter{
+            width: auto;
+            flex:1 0 200px;
+            .buy-filter-row{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .ic-col{
+                flex:1 1 25%;
+                margin-bottom: 30px;
+                margin-right: 2%;
+            }
+            .ic-col.advance-filter{
+                flex-basis: 134px !important;
+                flex-shrink: 0 !important;
+                margin-right: 0% !important
+            }
+            .theme-select{
+                // flex-basis: 160px;
+            }
+            
+            #ic-advanced-search{
+                background-color: $primary;
+                color:$white;
+            }
+            ul#buy-filter-price{
+                padding:0;
+                margin:0;
+                li{
+                    list-style-type: none;
+                    text-align: left;
+                }
+                li.buy-dropdown{
+                    cursor: pointer;
+                    list-style-type: none;
+                    position: relative;
+                    >.price-buy-filter{
+                        padding-left: 10px;
+                        &:hover{
+                            color:$primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#buy-map{
+    margin-bottom: 30px;
+    height: 600px;
+    iframe{
+        display: block;
+        height: 600px;
+    }
+}
+#map-result{
+    margin-top:30px;
+}
+.single-buy-map{
+    cursor: pointer;
+    @include transition(box-shadow .3s ease-in-out);
+    .buy-img-part{
+        position: relative;
+        img{
+            width:100%;
+            height: auto;
+        }
+        .text{
+            position: absolute;
+            top:0;
+            left: 0;
+            padding:10px;
+            background-color: #20b96c;
+            text-transform: capitalize;
+            color:#fff;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .buy-text-part{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 40px;
+        @include transition(all .3s ease-in-out);
+        p.price{
+            font-weight: 600;
+            padding-top: 12px;
+            @include transition(color .3s ease-in-out);
+        }
+        nav.buy-bed-bath{
+            .page-item:first-child .page-link {
+                border-top-left-radius:0;
+                border-bottom-left-radius:0;
+            }
+            ol{
+                margin:0;
+                padding-right: 0;
+                padding-left:0;
+                background-color: transparent;
+                padding-top: 0px;
+                padding-bottom: 4px;
+                li{
+                    font-weight: 600;
+                    color:$primary;
+                    @include transition(color .3s ease-in-out);
+                    text-transform: capitalize;
+                    a{
+                        color:$primary;
+                        @include transition(color .3s ease-in-out);
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        p.area{
+            @include heading-font-light;
+            text-transform: capitalize;
+        }
+        
+    }
+    &:hover{
+        box-shadow: -4px 0px 14.72px 1.28px rgba(1, 1, 1, 0.1);
+        p.price,
+        nav.buy-bed-bath ol li,
+        nav.buy-bed-bath ol li a
+        {
+            color:$secondary;
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $secondary;
+        }
+    }
+}
+
+ul.buy-dropdown-menu{
+    padding:0;
+    margin:0;
+    position: absolute;
+    left:0;
+    width:210px;
+    display: none;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+    z-index: 1;
+    background: #fff;
+    li{
+        display: inline-block;
+        padding-left:5px;
+        input{
+            width:80px;
+            border:none;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        ::-webkit-input-placeholder { /* Edge */
+            color: $primary;
+            font-size:12px;
+            font-weight: 300;
+            }
+            
+            :-ms-input-placeholder { /* Internet Explorer */
+            color: $primary;
+            font-size:12px;
+            font-weight: 300;
+            }
+            
+            ::placeholder {
+            color: $primary;
+            font-size:12px;
+            font-weight: 300;
+            }
+    }
+}
+
+
+#ic-advance-filter{
+    height:0;
+    opacity:0;
+    margin-bottom: 2.5em;
+    @include transition(height .3s ease-in-out, opacity .3s ease-in-out);
+    
+    .ic-refine-search{margin-top: 1em}
+
+    .ic-single-max-min{
+        margin-top:40px;
+        margin-bottom: 20px;
+        ul.buy-dropdown-menu{
+            display:block;
+            box-shadow:none;
+            position:relative;
+            width:100%;
+        }
+    }
+    h5.checkobx-heading{
+        display: block;
+        width:100%;
+        text-align:center;
+        margin-top:20px;
+        margin-bottom: 40px;
+    }
+    .checkbox-buy-filter{
+        width:33.33%;
+    }
+}
+#ic-advance-filter.heigt-anim{
+    height:100%;
+    opacity: 1;
+}
+.checkbox-container {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transiton: all 0.3s;
+    -moz-transiton: all .3s;
+    -o-transiton: all .3s;
+    transition: all .3s;
+    padding-left: 30px;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    input:checked ~ .checkmark {
+        background-color: #202020;
+    }
+    .checkmark {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        border: 1px solid $primary;
+        -webkit-transition:background-color .3s ease-in-out;
+        -moz-transition:background-color .3s ease-in-out;
+        transition:background-color .3s ease-in-out;
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            -moz-transition: transform .7s, opacity .7s;
+            -webkit-transition: transform .7s, opacity .7s;
+            transition: transform .7s, opacity .7s;
+            left: 4px;
+            top: 2px;
+            width: 5px;
+            height: 8px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+        }
+    }
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 1;
+    filter: alpha(opacity=1);     
+}
+
+
+@media only screen and (min-width:768px){
+    #map-result{
+        margin-top:0;
+    }
+    #buy-map{
+        height: 700px;
+        margin-bottom: 0px;
+        iframe{
+            height: 700px;
+        }
+    }
+    #ic-advance-filter{
+        .checkbox-buy-filter{
+            width:25%;
+            position: relative;
+            left: 15px;
+        }
+    }
+}
+@media only screen and (min-width:992px){
+    #buy-map{
+        height: 800px;
+        iframe{
+            height: 800px;
+        }
+    }
+}
+@media only screen and (max-width:900px){
+    #ic-buy #search-box #searchCity {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    #ic-buy #search-box #buy-filter .ic-col {
+        margin-bottom: 10px;
+    }
+}

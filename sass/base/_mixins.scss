@@ -1,0 +1,183 @@
+
+@mixin heading-font-light {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+}
+@mixin heading-font-semibold {
+  font-family: 'Titillium Web Semibold', sans-serif;
+}
+
+
+
+@mixin transition($property...) {
+    -webkit-transition: $property;
+    -moz-transition:    $property;
+    -ms-transition:     $property;
+    -o-transition:      $property;
+    transition:         $property;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay:    $delay;
+  -o-transition-delay:      $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay:         $delay;
+}
+
+%carousel-ul-li-border{
+  .carousel-caption{
+    ul{
+      padding:0;
+      margin:0;
+      li{
+          list-style-type: none;
+          display: inline-block;
+          a{
+              position: relative;
+              display: inline-block;
+              
+              &:hover{
+                  color:$primary;
+              }
+          }
+          &:not(:last-child){
+              a{
+                  margin-right: 5px;
+                  padding-right: 12px;
+              }
+          }
+        }
+    }
+    ul.ic-nameArea{
+        margin-bottom: 10px;
+        li{
+            a{
+                font-size: 18px;
+                font-weight: bold;
+            }
+            &:not(:last-child){
+                a{
+                    &::after{
+                        position: absolute;
+                        content: "|";
+                        right:0;
+                        top:0;
+                    }
+                }
+            }
+        }
+        &:hover{
+           li{
+               a{
+                   color: $secondary;
+               }
+           }
+        }
+    }
+  
+  ul.ic-how-many{
+      margin-bottom: 10px;
+      li{
+          a{
+              font-size: 16px;
+              font-weight: 200;
+          }
+          &:not(:last-child){
+              a{
+                  &::after{
+                      position: absolute;
+                      content: "|";
+                      right:0;
+                      top:0;
+                  }
+              }
+          }
+      }
+    }
+  }
+}
+%tab-pane-active-animation{
+    .tab-pane.active {
+        animation: ic-slide-down .9s ease-out;
+    }
+    
+    @-webkit-keyframes ic-slide-down {
+        0% { opacity: .3; transform: translateY(10%); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ic-slide-down {
+        0% { opacity: .3; transform: translateY(10%); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+}
+%tab-pane-active-animation-some-percent{
+    .tab-pane.active {
+        animation: ic-slide-down-2 .6s ease-out;
+    }
+    
+    @-webkit-keyframes ic-slide-down-2 {
+        0% { opacity: 1; transform: translateY(20%); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ic-slide-down-2 {
+        0% { opacity: 1; transform: translateY(20%); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+}
+%tab-animation-fadeInUp{
+    @-webkit-keyframes ic-fadeInUp{
+        0%{
+            -webkit-transform:translate3d(0,10%,0);
+            opacity:0;transform:translate3d(0,10%,0)
+        }
+        to
+        {-webkit-transform:translateZ(0);
+            opacity:1;
+            transform:translateZ(0)
+        }
+    }
+    @keyframes ic-fadeInUp{
+        0%{-webkit-transform:translate3d(0,10%,0);
+            opacity:0;transform:translate3d(0,10%,0)
+        }
+        to{-webkit-transform:translateZ(0);
+            opacity:1;transform:translateZ(0)
+        }
+    }
+    .tab-pane.active {
+        animation: ic-fadeInUp .6s ease-out;
+    }
+}
+%contact-form-section{
+    .form-control{
+        border-width: 1px;
+        border-color: rgb(149, 149, 149);
+        border-style: solid;
+        font-weight: 300;
+        @include transition(border-color .3s,color .3s);
+        &:hover,
+        &:focus{
+            border-color: $primary;
+        }
+    }
+    select{
+        font-weight: 300;
+        color:$form-input-color;
+    }
+    textarea{
+        padding-top: 0px;
+    }
+    ::-webkit-input-placeholder { /* Edge */
+        color: $form-input-color;
+    }
+    :-moz-input-placeholder { /* Mozilla Firefox */
+        color: $form-input-color;
+    }
+    :-ms-input-placeholder { /* Internet Explorer */
+        color: $form-input-color;
+    }
+    ::placeholder {
+        color: $form-input-color;
+    }
+}
